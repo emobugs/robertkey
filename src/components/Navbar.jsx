@@ -3,9 +3,11 @@ import logo from "../assets/logo.png";
 
 export const Navbar = () => (
 	<nav className="fixed top-0 w-full z-40 border-b border-white/5 bg-zinc-950/80 backdrop-blur-md">
-		<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+		<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center md:justify-between h-16">
 			<div className="flex items-center gap-2 h-[30px]">
-				<img src={logo} alt="" className="h-full" />
+				<a href="#" className="h-[30px]">
+					<img src={logo} alt="" className="h-full" />
+				</a>
 			</div>
 			<div className="hidden md:flex items-center gap-6">
 				<a

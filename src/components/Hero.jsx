@@ -11,7 +11,7 @@ export const Hero = () => (
 							<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
 							<span className="relative inline-flex rounded-full h-2 w-2 bg-accent-500"></span>
 						</span>
-						Авариен Автоключар Силистра
+						Авариен Ключар/Автоключар Силистра
 					</div>
 					<h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-[1.1] mb-6">
 						Професионално <br />
@@ -77,7 +77,7 @@ export const Hero = () => (
 						</div>
 					</div>
 					{/* Floating Badge */}
-					<div className="absolute -bottom-6 -left-2 glass-panel p-4 rounded-xl flex items-center gap-3 animate-bounce shadow-xl">
+					<div className="absolute -bottom-8 md:-left-6 glass-panel p-4 rounded-xl flex items-center gap-3 animate-bounce shadow-xl">
 						<div className="bg-green-500/20 p-2 rounded-lg text-green-400">
 							<Icon icon="solar:check-circle-linear" width="24" />
 						</div>
