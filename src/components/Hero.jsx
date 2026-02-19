@@ -1,4 +1,7 @@
+import React, { useEffect, useRef } from "react";
 import { Icon } from "@iconify/react";
+import { gsap } from "gsap";
+import { motion } from "framer-motion";
 
 export const Hero = () => (
 	<section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
@@ -33,13 +36,13 @@ export const Hero = () => (
 						</a>
 						<a
 							href="#services"
-							className="inline-flex items-center justify-center gap-2 glass-panel text-white px-8 py-3.5 rounded-lg transition-all"
+							className="inline-flex group items-center justify-center gap-2 glass-panel text-white px-8 py-3.5 rounded-lg transition-all"
 						>
-							Виж услуги{" "}
+							<span className="group-hover:scale-[1.05]">Виж услуги </span>
 							<Icon
 								icon="solar:arrow-right-linear"
 								width="20"
-								className="hover:text-accent-400 hover:scale-[1.5] transition-all"
+								className="mt-1 group-hover:text-accent-400 group-hover:scale-[1.2]"
 							/>
 						</a>
 					</div>
