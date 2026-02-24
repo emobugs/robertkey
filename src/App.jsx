@@ -7,6 +7,7 @@ import TrustIndicators from "./components/TrustIndicators";
 import Services from "./components/Services";
 import Process from "./components/Process";
 import Footer from "./components/Footer";
+import Testimonials from "./components/Testimonials";
 
 // --- Под-компоненти (Функции) ---
 
@@ -25,17 +26,29 @@ export default function App() {
 			<TrustIndicators />
 			<Services />
 			<Process />
+			<Testimonials />
 
 			<Footer />
 
 			{/* Mobile Sticky Button */}
 			<div className="fixed bottom-0 left-0 w-full p-4 z-50 md:hidden bg-gradient-to-t from-zinc-950 pt-8">
-				<a
-					href="tel:+359888123456"
-					className="flex items-center justify-center gap-3 w-full bg-accent-600 text-white font-bold py-4 rounded-xl shadow-lg transition-all active:scale-95"
-				>
-					<Icon icon="solar:phone-calling-linear" width="24" /> ОБАДИ СЕ СЕГА
-				</a>
+				<div className="flex gap-3">
+					<a
+						href="tel:+359892922332"
+						className="flex-2 flex items-center justify-center gap-2 bg-white text-zinc-950 font-bold py-4 rounded-xl shadow-lg transition-all active:scale-95"
+					>
+						<Icon icon="solar:phone-calling-bold" width="22" />
+						Обади се
+					</a>
+					<a
+						href="viber://chat?number=%2B359892922332"
+						className="flex-1 flex items-center justify-center gap-2 font-bold py-4 rounded-xl shadow-lg transition-all active:scale-95"
+						style={{ background: "#7360f2" }}
+					>
+						<Icon icon="fa6-brands:viber" width="22" color="white" />
+						<span className="text-white">Viber</span>
+					</a>
+				</div>
 			</div>
 		</div>
 	);
