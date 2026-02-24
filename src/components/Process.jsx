@@ -78,7 +78,7 @@ export default function Process() {
 					</p>
 				</motion.div>
 
-				{/* Desktop: all 5 cards in a row */}
+				{/* Desktop: all 5 cards */}
 				<div className="hidden md:grid md:grid-cols-5 gap-4">
 					{steps.map((step, i) => {
 						const isActive = active === i;
@@ -90,19 +90,16 @@ export default function Process() {
 								viewport={{ once: true }}
 								transition={{ duration: 0.4, delay: i * 0.07 }}
 								onMouseEnter={() => setActive(i)}
-								className="relative rounded-2xl p-5 flex flex-col gap-4 cursor-default transition-colors duration-300"
-								style={{
-									background: isActive
-										? "rgba(255,255,255,0.04)"
-										: "rgba(255,255,255,0.02)",
-								}}
+								className={`relative rounded-2xl p-5 flex flex-col gap-4 cursor-default transition-colors duration-300 ${
+									isActive ? "bg-white/[0.04]" : "bg-white/[0.02]"
+								}`}
 							>
 								{/* Animated border glow */}
 								<motion.div
 									className="absolute inset-0 rounded-2xl pointer-events-none"
 									animate={{
 										boxShadow: isActive
-											? "inset 0 0 0 1px rgba(251,191,36,0.5), 0 0 18px 2px rgba(251,191,36,0.12)"
+											? "inset 0 0 0 1px var(--color-accent-500, #f97316), 0 0 18px 2px color-mix(in srgb, var(--color-accent-500, #f97316) 20%, transparent)"
 											: "inset 0 0 0 1px rgba(255,255,255,0.06)",
 									}}
 									transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -110,36 +107,29 @@ export default function Process() {
 
 								{/* Icon */}
 								<div
-									className="w-10 h-10 rounded-xl flex items-center justify-center transition-colors duration-300"
-									style={{
-										background: isActive
-											? "rgba(251,191,36,0.1)"
-											: "rgba(255,255,255,0.04)",
-										border: isActive
-											? "1px solid rgba(251,191,36,0.3)"
-											: "1px solid rgba(255,255,255,0.08)",
-										color: isActive ? "rgb(251,191,36)" : "rgb(161,161,170)",
-									}}
+									className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors duration-300 ${
+										isActive
+											? "bg-accent-500/10 border border-accent-500/30 text-accent-400"
+											: "bg-white/[0.04] border border-white/[0.08] text-zinc-500"
+									}`}
 								>
 									<Icon icon={step.icon} width="20" />
 								</div>
 
 								{/* Number */}
 								<div
-									className="text-xs font-bold tracking-widest transition-colors duration-300"
-									style={{
-										color: isActive
-											? "rgba(251,191,36,0.6)"
-											: "rgba(255,255,255,0.15)",
-									}}
+									className={`text-xs font-bold tracking-widest transition-colors duration-300 ${
+										isActive ? "text-accent-500/60" : "text-white/15"
+									}`}
 								>
 									{step.id}
 								</div>
 
 								{/* Title */}
 								<h3
-									className="text-sm font-semibold leading-snug transition-colors duration-300"
-									style={{ color: isActive ? "#fff" : "rgb(212,212,216)" }}
+									className={`text-sm font-semibold leading-snug transition-colors duration-300 ${
+										isActive ? "text-white" : "text-zinc-300"
+									}`}
 								>
 									{step.title}
 								</h3>
@@ -149,16 +139,11 @@ export default function Process() {
 
 								{/* Accent tag */}
 								<div
-									className="inline-flex items-center gap-1 text-[10px] font-medium rounded-full px-2.5 py-1 w-fit mt-auto transition-colors duration-300"
-									style={{
-										background: isActive
-											? "rgba(251,191,36,0.1)"
-											: "rgba(255,255,255,0.04)",
-										border: isActive
-											? "1px solid rgba(251,191,36,0.25)"
-											: "1px solid rgba(255,255,255,0.07)",
-										color: isActive ? "rgb(251,191,36)" : "rgb(113,113,122)",
-									}}
+									className={`inline-flex items-center gap-1 text-[10px] font-medium rounded-full px-2.5 py-1 w-fit mt-auto transition-colors duration-300 ${
+										isActive
+											? "bg-accent-500/10 border border-accent-500/25 text-accent-400"
+											: "bg-white/[0.04] border border-white/[0.07] text-zinc-600"
+									}`}
 								>
 									<Icon icon="solar:star-linear" width="10" />
 									{step.accent}
@@ -178,21 +163,13 @@ export default function Process() {
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
 								transition={{ duration: 0.4, delay: i * 0.06 }}
-								className="relative rounded-2xl p-5 flex flex-col gap-4 flex-shrink-0 w-[72vw] snap-start"
-								style={{
-									background: "rgba(255,255,255,0.03)",
-									border: "1px solid rgba(255,255,255,0.08)",
-								}}
+								className="glass-panel relative rounded-2xl p-5 flex flex-col gap-4 flex-shrink-0 w-[72vw] snap-start"
 							>
 								<div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-400">
 									<Icon icon={step.icon} width="20" />
 								</div>
-								<div className="text-xs font-bold tracking-widest text-white/20">
-									{step.id}
-								</div>
-								<h3 className="text-sm font-semibold text-zinc-200 leading-snug">
-									{step.title}
-								</h3>
+								<div className="text-xs font-bold tracking-widest text-white/20">{step.id}</div>
+								<h3 className="text-sm font-semibold text-zinc-200 leading-snug">{step.title}</h3>
 								<p className="text-zinc-500 text-xs leading-relaxed">{step.desc}</p>
 								<div className="inline-flex items-center gap-1 text-[10px] font-medium text-accent-400 bg-accent-500/10 border border-accent-500/20 rounded-full px-2.5 py-1 w-fit mt-auto">
 									<Icon icon="solar:star-linear" width="10" />
@@ -201,7 +178,6 @@ export default function Process() {
 							</motion.div>
 						))}
 					</div>
-					{/* Scroll hint dots */}
 					<div className="flex justify-center gap-1.5 mt-3">
 						{steps.map((_, i) => (
 							<div key={i} className="w-1 h-1 rounded-full bg-zinc-700" />

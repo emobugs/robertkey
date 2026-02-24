@@ -5,7 +5,6 @@ import { Icon } from "@iconify/react";
 
 function TechVisual() {
 	const [isLoaded, setIsLoaded] = useState(false);
-
 	const lineRef = useRef(null);
 	const glowRef = useRef(null);
 
@@ -21,7 +20,6 @@ function TechVisual() {
 		}, 100);
 		return () => clearTimeout(timer);
 	}, []);
-	// Безкрайна анимация на сканиращата линия
 
 	useEffect(() => {
 		if (isLoaded) {
@@ -33,7 +31,6 @@ function TechVisual() {
 				ease: "power2.inOut",
 				delay: 0.3,
 			});
-			// Пулсиращ ефект на иконата
 			gsap.to(glowRef.current, {
 				opacity: 0.8,
 				scale: 1.2,
@@ -46,9 +43,9 @@ function TechVisual() {
 	}, [isLoaded]);
 
 	return (
-		<div className="relative mx-auto w-full max-w-lg aspect-square flex flex-col justify-center">
+		<div className="relative mx-auto w-full max-w-lg flex flex-col justify-center mt-6">
 			<div className="glass-panel rounded-2xl p-1 relative overflow-hidden shadow-2xl border border-white/10">
-				<div className="bg-zinc-900 rounded-xl h-full w-full aspect-video flex flex-col items-center justify-center relative overflow-hidden">
+				<div className="bg-zinc-900 rounded-xl w-full aspect-video flex flex-col items-center justify-center relative overflow-hidden">
 					<div className="absolute inset-0 opacity-10 tech-grid"></div>
 
 					{/* Сканираща линия */}
@@ -81,19 +78,15 @@ function TechVisual() {
 				</div>
 			</div>
 
-			{/* Floating Badge с Framer Motion за мобилни */}
+			{/* Floating Badge */}
 			<AnimatePresence>
 				{isLoaded && (
 					<motion.div
 						initial={{ opacity: 0, y: 20, scale: 0.9 }}
-						whileInView={{ opacity: 1, y: 0, scale: 1 }} // Задейства се само при виждане
-						viewport={{ once: true, margin: "-50px" }} // Оптимизация за мобилни
-						transition={{
-							duration: 1.2, // Бавно излизане
-							delay: 0.8, // Изчаква малко след зареждането
-							ease: "easeOut",
-						}}
-						className="absolute -bottom-6  md:-left-8 glass-panel p-4 rounded-xl flex items-center gap-3 shadow-2xl z-30"
+						whileInView={{ opacity: 1, y: 0, scale: 1 }}
+						viewport={{ once: true, margin: "-50px" }}
+						transition={{ duration: 1.2, delay: 0.8, ease: "easeOut" }}
+						className="absolute -bottom-4 md:-left-8 glass-panel p-4 rounded-xl flex items-center gap-3 shadow-2xl z-30"
 					>
 						<div className="bg-green-500/20 p-2 rounded-lg text-green-400 shrink-0">
 							<Icon icon="solar:check-circle-linear" width="24" />

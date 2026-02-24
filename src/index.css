@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-	--color-accent-400: #fb923c;
-	--color-accent-500: #f97316;
-	--color-accent-600: #ea580c;
+	--color-accent-400: ##ffdd59;
+	--color-accent-500: ##ffd32a;
+	--color-accent-600: ##ffc048;
 }
 
 .tech-grid {
