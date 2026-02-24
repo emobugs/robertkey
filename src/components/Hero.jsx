@@ -13,7 +13,7 @@ export const Hero = () => {
 		<section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
 			<div className="tech-grid absolute inset-0 opacity-20"></div>
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-				<div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+				<div className="grid lg:grid-cols-2 lg:gap-20 items-center">
 					<div className="text-center lg:text-left">
 						<motion.div
 							{...fadeUp(0.1)}
