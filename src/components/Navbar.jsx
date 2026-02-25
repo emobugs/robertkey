@@ -13,7 +13,10 @@ export const Navbar = () => {
 	const [open, setOpen] = useState(false);
 
 	useEffect(() => {
-		document.body.style.overflow = "hidden";
+		document.body.style.overflow = open ? "hidden" : "auto";
+		return () => {
+			document.body.style.overflow = "";
+		};
 	}, [open]);
 
 	return (
