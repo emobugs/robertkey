@@ -8,6 +8,7 @@ import Services from "./components/Services";
 import Process from "./components/Process";
 import Footer from "./components/Footer";
 import Testimonials from "./components/Testimonials";
+import Location from "./components/Location";
 
 // --- Под-компоненти (Функции) ---
 
@@ -26,6 +27,7 @@ export default function App() {
 			<TrustIndicators />
 			<Services />
 			<Process />
+			<Location />
 			<Testimonials />
 
 			<Footer />
