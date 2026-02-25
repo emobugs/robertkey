@@ -23,7 +23,7 @@ export const Footer = () => (
 			</div>
 
 			{/* Col 3 - Contacts */}
-			<div>
+			<div className="mb-10">
 				<h4 className="text-white font-medium mb-4 uppercase text-xs tracking-widest">
 					Контакти
 				</h4>
