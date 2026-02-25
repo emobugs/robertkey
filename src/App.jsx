@@ -33,7 +33,7 @@ export default function App() {
 			<Footer />
 
 			{/* Mobile Sticky Button */}
-			<div className="fixed bottom-0 left-0 w-full p-4 z-50 md:hidden bg-gradient-to-t from-zinc-950 pt-8">
+			<div className="fixed bottom-10 left-0 w-full p-4 z-50 md:hidden bg-gradient-to-t from-zinc-950 pt-8">
 				<div className="flex gap-3">
 					<a
 						href="tel:+359892922332"
