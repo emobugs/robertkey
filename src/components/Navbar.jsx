@@ -57,7 +57,7 @@ export const Navbar = () => {
 						className="md:hidden p-2 text-zinc-400 hover:text-white transition-colors"
 					>
 						<Icon
-							icon={open ? "solar:close-linear" : "solar:hamburger-menu-linear"}
+							icon={open ? "line-md:close" : "solar:hamburger-menu-linear"}
 							width="24"
 						/>
 					</button>
