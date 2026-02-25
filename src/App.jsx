@@ -16,7 +16,7 @@ import Location from "./components/Location";
 
 export default function App() {
 	return (
-		<div className="bg-zinc-950 text-zinc-300 min-h-screen antialiased selection:bg-accent-500 selection:text-white relative">
+		<div className="bg-zinc-950 text-zinc-300 min-h-full antialiased selection:bg-accent-500 selection:text-white relative">
 			<div className="fixed top-0 left-0 w-full h-screen overflow-hidden -z-10 pointer-events-none">
 				<div className="absolute top-0 right-0 w-1/2 h-1/2 bg-accent-500/10 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2"></div>
 				<div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-blue-600/10 blur-[100px] rounded-full -translate-x-1/2 translate-y-1/2"></div>
@@ -33,7 +33,7 @@ export default function App() {
 			<Footer />
 
 			{/* Mobile Sticky Button */}
-			<div className="fixed bottom-0 left-0 w-full p-2 z-50 md:hidden bg-gradient-to-t from-zinc-950 pt-8 pb-[calc(1rem+env(safe-area-inset-bottom))">
+			<div className="fixed bottom-0 left-0 w-full p-2 z-50 md:hidden bg-gradient-to-t from-zinc-950 pt-8 pb-[calc(1rem+env(safe-area-inset-bottom))]">
 				<div className="flex gap-3">
 					<a
 						href="tel:+359892922332"

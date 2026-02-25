@@ -6,6 +6,12 @@
 	--color-accent-600: #ffc048;
 }
 
+html,
+body {
+	height: 100%;
+	overscroll-behavior: none;
+}
+
 .tech-grid {
 	background-image:
 		linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),

@@ -81,10 +81,7 @@ export default function Process() {
 	}, []);
 
 	return (
-		<section
-			id="process"
-			className="py-24 bg-zinc-900/50 border-y border-white/5 overflow-hidden"
-		>
+		<section id="process" className="py-24 bg-zinc-900/50 border-y border-white/5">
 			<div className="max-w-7xl mx-auto px-4">
 				{/* Header */}
 				<motion.div

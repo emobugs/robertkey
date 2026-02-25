@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react";
 import logo from "../assets/logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import keys from "../assets/keys.png";
 
 const links = [
 	{ href: "#services", label: "Услуги" },
@@ -25,12 +26,14 @@ export const Navbar = () => {
 				initial={{ opacity: 0, y: -20 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.5, ease: "easeOut" }}
-				className="fixed top-0 w-full z-40 border-b border-white/5 bg-zinc-950/80 backdrop-blur-md"
+				className="fixed top-0 w-full z-40 border-b border-white/5 bg-zinc-950/80 backdrop-blur-md overflow-hidden"
 			>
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+				<div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
 					<a href="#" className="h-[30px]">
 						<img src={logo} alt="" className="h-full" />
 					</a>
+
+					<img src={keys} alt="" className="h-full md:hidden" />
 
 					{/* Desktop */}
 					<div className="hidden md:flex items-center gap-6">

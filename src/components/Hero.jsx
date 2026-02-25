@@ -10,7 +10,7 @@ const fadeUp = (delay = 0) => ({
 
 export const Hero = () => {
 	return (
-		<section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+		<section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32">
 			<div className="tech-grid absolute inset-0 opacity-20"></div>
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 				<div className="grid lg:grid-cols-2 lg:gap-20 items-center">

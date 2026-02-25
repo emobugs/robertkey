@@ -70,7 +70,7 @@ function Location() {
 						whileInView={{ opacity: 1, x: 0 }}
 						viewport={{ once: true, margin: "-60px" }}
 						transition={{ duration: 0.6, delay: 0.1 }}
-						className="h-80 lg:h-96 w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
+						className="h-80 lg:h-96 w-full rounded-2xl border border-white/10 shadow-2xl"
 					>
 						<iframe
 							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2864.386770251481!2d27.254156076648744!3d44.11664392233297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b0210033e0dc0f%3A0xbc6cc9d2d9644054!2zUk9CRVJUIEtFWSDigJMg0JrQu9GO0YfQsNGAINC4INCQ0LLRgtC-0LrQu9GO0YfQsNGAINCh0LjQu9C40YHRgtGA0LAsINCa0LvRjtGH0L7QstC1INGBINGH0LjQvw!5e0!3m2!1sbg!2sbg!4v1772023605549!5m2!1sbg!2sbg"
