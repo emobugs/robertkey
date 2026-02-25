@@ -40,6 +40,36 @@ const steps = [
 	},
 ];
 
+function MobileScroll() {
+	return (
+		<div className="md:hidden -mx-4 px-4">
+			<div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-none overscroll-x-contain">
+				{steps.map((step, i) => (
+					<div
+						key={step.id}
+						className="glass-panel relative rounded-2xl p-5 flex flex-col gap-4 flex-shrink-0 w-[72vw] snap-start"
+					>
+						<div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-400">
+							<Icon icon={step.icon} width="20" />
+						</div>
+						<div className="text-xs font-bold tracking-widest text-white/20">
+							{step.id}
+						</div>
+						<h3 className="text-sm font-semibold text-zinc-200 leading-snug">
+							{step.title}
+						</h3>
+						<p className="text-zinc-500 text-xs leading-relaxed">{step.desc}</p>
+						<div className="inline-flex items-center gap-1 text-[10px] font-medium text-accent-400 bg-accent-500/10 border border-accent-500/20 rounded-full px-2.5 py-1 w-fit mt-auto">
+							<Icon icon="solar:star-linear" width="10" />
+							{step.accent}
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	);
+}
+
 export default function Process() {
 	const [active, setActive] = useState(0);
 
@@ -94,18 +124,15 @@ export default function Process() {
 									isActive ? "bg-white/[0.04]" : "bg-white/[0.02]"
 								}`}
 							>
-								{/* Animated border glow */}
 								<motion.div
 									className="absolute inset-0 rounded-2xl pointer-events-none"
 									animate={{
 										boxShadow: isActive
-											? "inset 0 0 0 1px var(--color-accent-500, #f97316), 0 0 18px 2px color-mix(in srgb, var(--color-accent-500, #f97316) 20%, transparent)"
+											? "inset 0 0 0 1px var(--color-accent-500), 0 0 18px 2px color-mix(in srgb, var(--color-accent-500) 20%, transparent)"
 											: "inset 0 0 0 1px rgba(255,255,255,0.06)",
 									}}
 									transition={{ duration: 0.4, ease: "easeInOut" }}
 								/>
-
-								{/* Icon */}
 								<div
 									className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors duration-300 ${
 										isActive
@@ -115,8 +142,6 @@ export default function Process() {
 								>
 									<Icon icon={step.icon} width="20" />
 								</div>
-
-								{/* Number */}
 								<div
 									className={`text-xs font-bold tracking-widest transition-colors duration-300 ${
 										isActive ? "text-accent-500/60" : "text-white/15"
@@ -124,8 +149,6 @@ export default function Process() {
 								>
 									{step.id}
 								</div>
-
-								{/* Title */}
 								<h3
 									className={`text-sm font-semibold leading-snug transition-colors duration-300 ${
 										isActive ? "text-white" : "text-zinc-300"
@@ -133,11 +156,7 @@ export default function Process() {
 								>
 									{step.title}
 								</h3>
-
-								{/* Desc */}
 								<p className="text-zinc-500 text-xs leading-relaxed">{step.desc}</p>
-
-								{/* Accent tag */}
 								<div
 									className={`inline-flex items-center gap-1 text-[10px] font-medium rounded-full px-2.5 py-1 w-fit mt-auto transition-colors duration-300 ${
 										isActive
@@ -153,37 +172,8 @@ export default function Process() {
 					})}
 				</div>
 
-				{/* Mobile: horizontal scroll */}
-				<div className="md:hidden -mx-4 px-4">
-					<div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-none">
-						{steps.map((step, i) => (
-							<motion.div
-								key={step.id}
-								initial={{ opacity: 0, y: 20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ duration: 0.4, delay: i * 0.06 }}
-								className="glass-panel relative rounded-2xl p-5 flex flex-col gap-4 flex-shrink-0 w-[72vw] snap-start"
-							>
-								<div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-400">
-									<Icon icon={step.icon} width="20" />
-								</div>
-								<div className="text-xs font-bold tracking-widest text-white/20">{step.id}</div>
-								<h3 className="text-sm font-semibold text-zinc-200 leading-snug">{step.title}</h3>
-								<p className="text-zinc-500 text-xs leading-relaxed">{step.desc}</p>
-								<div className="inline-flex items-center gap-1 text-[10px] font-medium text-accent-400 bg-accent-500/10 border border-accent-500/20 rounded-full px-2.5 py-1 w-fit mt-auto">
-									<Icon icon="solar:star-linear" width="10" />
-									{step.accent}
-								</div>
-							</motion.div>
-						))}
-					</div>
-					<div className="flex justify-center gap-1.5 mt-3">
-						{steps.map((_, i) => (
-							<div key={i} className="w-1 h-1 rounded-full bg-zinc-700" />
-						))}
-					</div>
-				</div>
+				{/* Mobile */}
+				<MobileScroll />
 			</div>
 		</section>
 	);
