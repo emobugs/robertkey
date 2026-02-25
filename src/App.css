@@ -6,6 +6,10 @@
 	overflow: hidden;
 }
 
+html {
+	overflow: hidden;
+}
+
 body {
 	overflow: hidden;
 }

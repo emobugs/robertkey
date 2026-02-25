@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 import logo from "../assets/logo.png";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const links = [
 	{ href: "#services", label: "Услуги" },
@@ -11,6 +11,10 @@ const links = [
 
 export const Navbar = () => {
 	const [open, setOpen] = useState(false);
+
+	useEffect(() => {
+		document.body.style.overflow = "hidden";
+	}, [open]);
 
 	return (
 		<>
