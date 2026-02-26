@@ -19,7 +19,9 @@ export const Footer = () => (
 
 			{/* Col 2 - Badge */}
 			<div className="flex items-center justify-center">
-				<img src={unity} alt="Сдружение Ключарите на България" className="w-40" />
+				<a href="https://nalob.com/">
+					<img src={unity} alt="Сдружение Ключарите на България" className="w-40" />
+				</a>
 			</div>
 
 			{/* Col 3 - Contacts */}
