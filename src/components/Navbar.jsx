@@ -33,11 +33,11 @@ export const Navbar = () => {
 						<img src={logo} alt="" className="h-full" />
 					</a>
 
-					<img
+					{/* <img
 						src={keys}
 						alt=""
 						className="h-full md:hidden absolute left-1/2 -translate-x-1/2"
-					/>
+					/> */}
 
 					{/* Desktop */}
 					<div className="hidden md:flex items-center gap-6">
